@@ -27,6 +27,9 @@ const handleUserInput = function(key) {
   if (key === '\u0064') {  //d
     connection.write("Move: right");
   }
+  if (key === '\u0030') {  //0
+    connection.write("Say: I am Captain Snake");
+  }
 };
 
 // };\u0077  //w up
