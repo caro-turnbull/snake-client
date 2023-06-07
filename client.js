@@ -15,10 +15,16 @@ const connect = function () {
     });
   });
   conn.on("connect", () => {
-    console.log("connection sucesfully establihsed")
-    conn.write("Name: Cpt")
+    console.log("connection sucesfully establihsed");
+    conn.write("Name: Cpt");
+    // setTimeout(() => {
+    //   conn.write('Move: up');
+    //   setTimeout(() => {
+    //     conn.write('Move: left');
+    //   }, 50);
+    // }, 50);;
   })
-  
+
   
 
   // interpret incoming data as text
