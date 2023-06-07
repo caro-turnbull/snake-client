@@ -1,6 +1,5 @@
 const { log } = require("console");
 const net = require("net");
-const { stdin } = require("process");
 
 // establishes a connection with the game server
 const connect = function () {
@@ -10,21 +9,13 @@ const connect = function () {
   })
   //console.logs incomign data
   conn.on("connect", () => {
-    stdin.on('data', (data) => {
-      console.log(`incoming data: ${data}`)
-    });
-  });
-  conn.on("connect", () => {
     console.log("connection sucesfully establihsed");
     conn.write("Name: Cpt");
-    // setTimeout(() => {
-    //   conn.write('Move: up');
-    //   setTimeout(() => {
-    //     conn.write('Move: left');
-    //   }, 50);
-    // }, 50);;
   })
-
+  
+  conn.on('data', (data) => {
+    console.log(`incoming data: ${data}`)
+  });
   
 
   // interpret incoming data as text
